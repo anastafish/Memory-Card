@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/main.css'
+import Confetti from 'react-confetti'
+
 
 export default function Main(){
 const images = [
@@ -96,6 +98,7 @@ if (counter === 10){
 
     return(
         <div className="main-container">
+            {counter === 10 && <Confetti/>}
             {imageArray}
             {lose && <div className='lose-container'>
                 <h1>You Lost Try Again!</h1>

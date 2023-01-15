@@ -19,6 +19,17 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(5,1fr);
     }
+
+    .win-container{
+        width: 200px;
+        height: 400px;
+        gap: 30px;
+    }
+
+    .win-container h1{
+        text-align: center;
+        font-size: 18px;
+    }
 }
 
 .main-container img{
