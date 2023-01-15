@@ -1,3 +1,8 @@
+@font-face {
+    font-family: gotFont;
+    src: url(../../assests/GameOfThrones.ttf);
+}
+
 .main-container{
     padding: 20px;
     display: grid;
@@ -55,14 +60,17 @@
 }
 
 .win-container h1{
+    font-family: gotFont;
     color: greenyellow;
 }
 
 .lose-container h1{
+    font-family: gotFont;
     color: red;
 }
 
 .lose-container button{
+    font-family: gotFont;
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -81,6 +89,7 @@
     justify-content: center;
     background-color: #F9E79F;
     cursor: pointer;
+    padding: 3px;
 
 }
 .char:hover{
@@ -88,5 +97,7 @@
 }
 
 .char h3{
+    font-family: gotFont;
     user-select: none;
+    text-align: center;
 }
