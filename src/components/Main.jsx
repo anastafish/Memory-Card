@@ -4,43 +4,43 @@ import '../styles/main.css'
 export default function Main(){
 const images = [
     <div className='char' key={0}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/arya.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/arya.webp" alt="" />
         <h3>Arya Stark</h3>
         </div>,
     <div className='char' key={1}  onClick={handleClick}>
-        <img className='img' id='false'  src="../../public/images/bran.webp" alt="" />
+        <img className='img' id='false'  src="../../assests/images/bran.webp" alt="" />
         <h3>Bran Stark</h3>
         </div>,
     <div className='char' key={2}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/cersi.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/cersi.webp" alt="" />
         <h3>Cersei Lannister</h3>
         </div>,
     <div className='char' key={3}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/clarke.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/clarke.webp" alt="" />
         <h3>Daenerys Targaryen</h3>
         </div>,
     <div className='char' key={4}  onClick={handleClick}>
-        <img className='img' id='false'  src="../../public/images/terion.webp" alt="" />
+        <img className='img' id='false'  src="../../assests/images/terion.webp" alt="" />
         <h3>Tyrion Lannister</h3>
         </div>,
     <div className='char' key={5}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/jemmy.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/jemmy.webp" alt="" />
         <h3>Jemmy Lannister</h3>
         </div>,
     <div className='char' key={6}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/jon.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/jon.webp" alt="" />
         <h3>John Snow</h3>
         </div>,
     <div className='char' key={7}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/ned.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/ned.webp" alt="" />
         <h3>Ned Stark</h3>
         </div>,
     <div className='char' key={8}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/robert.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/robert.webp" alt="" />
         <h3>Robert Baratheon</h3>
         </div>,
     <div className='char' key={9}  onClick={handleClick}>
-        <img className='img' id='false' src="../../public/images/stanes.webp" alt="" />
+        <img className='img' id='false' src="../../assests/images/stanes.webp" alt="" />
         <h3>Stanes Baratheon</h3>
         </div>,
 ]  
