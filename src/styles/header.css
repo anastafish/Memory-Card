@@ -7,10 +7,16 @@
 }
 
 .header-container h1{
+    user-select: none;
     text-align: center;
     font-weight: 700;
 }
 
 .footer{
 user-select: none;
+}
+
+.footer a{
+    color: greenyellow;
+    text-decoration: none;
 }
