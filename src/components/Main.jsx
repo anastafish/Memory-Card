@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/main.css'
 
-export default function Main(props){
+export default function Main(){
 const images = [
     <div className='char' key={0}  onClick={handleClick}>
         <img className='img' id='false' src="../../images/arya.webp" alt="" />
@@ -47,6 +47,7 @@ const images = [
 const [imageArray, setImageArray] = useState(shufle())
 const [lose, setLose] = useState(false)
 const [counter, setCounter] = useState(0)
+const [win, setWin] = useState(false)
 
 
 function shufle(){
@@ -58,8 +59,7 @@ function shufle(){
   }
 
 
-function handleClick(event){   
-    setCounter(prevCounter => prevCounter+1)
+function handleClick(event){       
     if (event.target.id === 'true'){
         const chars = document.querySelectorAll('.char')
         for (let i = 0; i < chars.length; i++){
@@ -67,7 +67,10 @@ function handleClick(event){
         }
         setLose(true)
     }
-    else{event.target.id = 'true'}
+    else{
+        event.target.id = 'true'
+        setCounter(prevCounter => prevCounter+1)
+    }
     setImageArray(shufle(event))
 }
 
@@ -84,8 +87,12 @@ function newGame(){
     }
 }
 
-
-
+if (counter === 10){
+    const chars = document.querySelectorAll('.char')
+    for (let i = 0; i < chars.length; i++){
+        chars[i].style.display = "none"
+    }
+}
 
     return(
         <div className="main-container">
@@ -95,6 +102,11 @@ function newGame(){
                 <h1>Score: {counter}</h1>
                 <button onClick={newGame}>Play Again</button>
                 </div>}
+            {counter === 10 && <div className='win-container'>
+                <h1>congratulations You Won!</h1>
+                <h1>Score: {counter}</h1>
+                <button onClick={newGame}>Play Again</button>
+                </div>}    
         </div>    
         )
     }

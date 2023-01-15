@@ -8,4 +8,9 @@
 
 .header-container h1{
     text-align: center;
+    font-weight: 700;
+}
+
+.footer{
+user-select: none;
 }
