@@ -6,6 +6,7 @@
     gap: 10px;
     place-content: center;
     place-items: center;
+    height: 100%;
 }
 
 @media screen and (max-width:600px) {
@@ -20,7 +21,7 @@
 }
 
 .lose-container{
-    background-color: red;
+    background-color: #F9E79F;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,16 +29,24 @@
     grid-column: 1 / 6;
     padding: 20px;
     border-radius: 20px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.lose-container h1{
+    color: red;
 }
 
 .lose-container button{
     border: none;
     border-radius: 10px;
     padding: 10px;
+    background-color: springgreen;
+    cursor: pointer;
 }
 
 .lose-container button:hover{
-    background-color:springgreen;
+    background-color:white;
 }
 
 .char{
@@ -46,5 +55,13 @@
     align-items: center;
     justify-content: center;
     background-color: #F9E79F;
+    cursor: pointer;
 
+}
+.char:hover{
+    border: 3px solid greenyellow;
+}
+
+.char h3{
+    user-select: none;
 }

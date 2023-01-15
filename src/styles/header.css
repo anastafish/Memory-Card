@@ -1,0 +1,11 @@
+.header-container{
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.header-container h1{
+    text-align: center;
+}

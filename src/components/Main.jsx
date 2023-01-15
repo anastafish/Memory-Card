@@ -4,49 +4,50 @@ import '../styles/main.css'
 export default function Main(props){
 const images = [
     <div className='char' key={0}  onClick={handleClick}>
-        <img id='false' src="../../images/arya.webp" alt="" />
+        <img className='img' id='false' src="../../images/arya.webp" alt="" />
         <h3>Arya Stark</h3>
         </div>,
     <div className='char' key={1}  onClick={handleClick}>
-        <img id='false'  src="../../images/bran.webp" alt="" />
+        <img className='img' id='false'  src="../../images/bran.webp" alt="" />
         <h3>Bran Stark</h3>
         </div>,
     <div className='char' key={2}  onClick={handleClick}>
-        <img id='false' src="../../images/cersi.webp" alt="" />
+        <img className='img' id='false' src="../../images/cersi.webp" alt="" />
         <h3>Cersei Lannister</h3>
         </div>,
     <div className='char' key={3}  onClick={handleClick}>
-        <img id='false' src="../../images/clarke.webp" alt="" />
+        <img className='img' id='false' src="../../images/clarke.webp" alt="" />
         <h3>Daenerys Targaryen</h3>
         </div>,
     <div className='char' key={4}  onClick={handleClick}>
-        <img id='false'  src="../../images/terion.webp" alt="" />
+        <img className='img' id='false'  src="../../images/terion.webp" alt="" />
         <h3>Tyrion Lannister</h3>
         </div>,
     <div className='char' key={5}  onClick={handleClick}>
-        <img id='false' src="../../images/jemmy.webp" alt="" />
+        <img className='img' id='false' src="../../images/jemmy.webp" alt="" />
         <h3>Jemmy Lannister</h3>
         </div>,
     <div className='char' key={6}  onClick={handleClick}>
-        <img id='false' src="../../images/jon.webp" alt="" />
+        <img className='img' id='false' src="../../images/jon.webp" alt="" />
         <h3>John Snow</h3>
         </div>,
     <div className='char' key={7}  onClick={handleClick}>
-        <img id='false' src="../../images/ned.webp" alt="" />
+        <img className='img' id='false' src="../../images/ned.webp" alt="" />
         <h3>Ned Stark</h3>
         </div>,
     <div className='char' key={8}  onClick={handleClick}>
-        <img id='false' src="../../images/robert.webp" alt="" />
+        <img className='img' id='false' src="../../images/robert.webp" alt="" />
         <h3>Robert Baratheon</h3>
         </div>,
     <div className='char' key={9}  onClick={handleClick}>
-        <img id='false' src="../../images/stanes.webp" alt="" />
+        <img className='img' id='false' src="../../images/stanes.webp" alt="" />
         <h3>Stanes Baratheon</h3>
         </div>,
 ]  
 const [imageArray, setImageArray] = useState(shufle())
 const [lose, setLose] = useState(false)
-console.log(lose)
+const [counter, setCounter] = useState(0)
+
 
 function shufle(){
     let shuffled = images
@@ -58,9 +59,13 @@ function shufle(){
 
 
 function handleClick(event){   
+    setCounter(prevCounter => prevCounter+1)
     if (event.target.id === 'true'){
+        const chars = document.querySelectorAll('.char')
+        for (let i = 0; i < chars.length; i++){
+            chars[i].style.display = "none"
+        }
         setLose(true)
-        event.target.id = 'false'
     }
     else{event.target.id = 'true'}
     setImageArray(shufle(event))
@@ -68,6 +73,15 @@ function handleClick(event){
 
 function newGame(){
     setLose(false)
+    setCounter(0)
+    const chars = document.querySelectorAll('.char')
+    for (let i = 0; i < chars.length; i++){
+        chars[i].style.display = "flex"
+    }
+    const elements = document.querySelectorAll('.img')
+    for (let i = 0; i < elements.length; i++){
+        elements[i].id = 'false'
+    }
 }
 
 
@@ -78,6 +92,7 @@ function newGame(){
             {imageArray}
             {lose && <div className='lose-container'>
                 <h1>You Lost Try Again!</h1>
+                <h1>Score: {counter}</h1>
                 <button onClick={newGame}>Play Again</button>
                 </div>}
         </div>    
